@@ -38,5 +38,5 @@ Whether it’s DNS settings, performance configurations, or security adjustments
 in one user-friendly interface. 
 This centralized approach saves time and eliminates the frustration of juggling multiple platforms.
 
-We'll also be using Cloudflare pages to host our website, and using Cloudflare as our domain registrar removes a few
+We'll also be using Cloudflare Pages to host our website, and using Cloudflare as our domain registrar removes a few
 steps for us.

@@ -36,6 +36,11 @@ Pages:
 
     The first step to creating a website is buying a domain (the url that you type into the address bar). 
 2. [Creating a website with Jekyll](/making-website/creating-a-website)
+   
+   We'll then create our website using Jekyll, and upload it to Github to use with Cloudflare Pages.
+3. [Deploying to Cloudflare Workers](/making-website/deploying-your-website)
+   
+   Finally, we'll use the domain we created in step one to publish our website.
 
     
    
