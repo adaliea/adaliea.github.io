@@ -40,3 +40,7 @@ This centralized approach saves time and eliminates the frustration of juggling 
 
 We'll also be using Cloudflare Pages to host our website, and using Cloudflare as our domain registrar removes a few
 steps for us.
+
+---
+
+Now let's [build our website](creating-a-website).
