@@ -6,9 +6,11 @@ title: Publishing Your Website with Cloudflare Pages
 [Cloudflare Pages](https://pages.cloudflare.com/Links) is a modern web development platform designed for 
 frontend developers to build, deploy, and scale websites with ease. 
 It offers seamless integration with GitHub and GitLab, enabling automatic deployments triggered by code commits. 
+
 Developers can connect their repositories, specify build commands, and let Cloudflare handle the rest. 
 Built on Cloudflare’s network, Pages delivers high performance and scalability. 
 It supports dynamic functionality through integration with Cloudflare Workers, allowing developers to add serverless backend capabilities to their static sites.
+
 Collaboration is streamlined with features like unlimited team seats, shareable preview links for every commit, 
 and granular access controls via Cloudflare Access. 
 The platform is free to use, offering generous limits such as 500 builds per month, 
