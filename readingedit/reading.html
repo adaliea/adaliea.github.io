@@ -37,8 +37,13 @@ title: Reading Log (Edit Mode)
 
             let imageLink = bookData.coverLink;
 
-            if (imageLink.includes("books.google.com")) {
-                imageLink = imageLink + "&fife=w800"
+            try {
+                const parsedUrl = new URL(imageLink);
+                if (parsedUrl.host === "books.google.com" || parsedUrl.host.endsWith(".books.google.com")) {
+                    imageLink = imageLink + "&fife=w800";
+                }
+            } catch (e) {
+                console.error("Invalid URL:", imageLink, e);
             }
 
             fetchImage(imageLink);
