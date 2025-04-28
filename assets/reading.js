@@ -10,15 +10,11 @@ fetch(
         json.forEach(function(bookData) {
             let imageLink = bookData.coverLink;
             let imageSources = "";
-            for (let size of sizes) {
-                try {
-                    const parsedUrl = new URL(imageLink);
-                    const allowedHosts = ["books.google.com"];
-                    if (allowedHosts.includes(parsedUrl.host)) {
-                        imageSources += imageLink + "&fife=w" + size + " " + size + "w, ";
-                    }
-                } catch (e) {
-                    console.error("Invalid URL:", imageLink);
+            const parsedUrl = new URL(imageLink);
+            if (parsedUrl.host.includes("books.google.com")) {
+                for (let size of sizes) {
+                    parsedUrl.searchParams.set("fife", size.toString())
+                    imageSources +=  parsedUrl.toString() + " " + size + "w, ";
                 }
             }
 
