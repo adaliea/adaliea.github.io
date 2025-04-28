@@ -30,28 +30,18 @@ title: Reading Log (Edit Mode)
 
         
         json.forEach(function(bookData) {
-            let authorHtml =
-                bookData.authors.map(
-                    (author, index) => `${author}`
-                );
-
-            let imageLink = bookData.coverLink;
-
-            try {
-                const parsedUrl = new URL(imageLink);
-                if (parsedUrl.host === "books.google.com" || parsedUrl.host.endsWith(".books.google.com")) {
-                    imageLink = imageLink + "&fife=w800";
-                }
-            } catch (e) {
-                console.error("Invalid URL:", imageLink, e);
+            let authorHtml = bookData.authors.map((author, index) => `${author}`);
+            const parsedUrl = new URL(bookData.coverLink);
+            if (parsedUrl.host === "books.google.com") {
+              parsedUrl.searchParams.set("fife", "w800");
             }
 
-            fetchImage(imageLink);
+            fetchImage(parsedUrl.toString());
             let html = `
                 <div class="book">
                     <div style="display:inline-block;vertical-align:top;">
                         <a href="https://books.api.dacubeking.com/bestedition?workId=${bookData.workId}&render=true&bypassCache=true">
-                            <img src="${imageLink}" alt="Edit Book Info for, ${bookData.name}">
+                            <img src="${parsedUrl.toString()}" alt="Edit Book Info for, ${bookData.name}">
                         </a>
                     </div>
                     <div style="display:inline-block;vertical-align:bottom;">
