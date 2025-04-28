@@ -30,7 +30,10 @@ For those learning to code, having a live website to experiment with can be an i
 It provides a sandbox where you can freely try new things, troubleshoot issues, and gain confidence in your skills. 
 Whenever inspiration strikes, you can just open an editor and dive right in, making it an excellent way to learn by doing.
 
-Pages:
+
+---
+
+###   Pages:
 
 1. [Registering a domain](/making-website/buying-a-domain)
 

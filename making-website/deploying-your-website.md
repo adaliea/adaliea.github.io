@@ -24,3 +24,9 @@ Tips:
 - You still need to [configure your site to use your custom domain](https://developers.cloudflare.com/pages/configuration/custom-domains/#add-a-custom-domain) 
   once you've finished the above.
   - If you've set up your domain with Cloudflare's Registrar, you only need to worry about the first 5 steps.
+- If your build times are really long (over a minute or two), try changing the version of Ruby you're using to `3.2.2`. 
+  Do this by editing/creating a `.ruby-version` file in your project root with the content `3.2.2` inside.
+
+---
+
+**And we're done!** Your website should now be visible at the domain you bought!

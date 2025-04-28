@@ -10,7 +10,7 @@ When it comes to registering a domain, the choices can feel overwhelming. With c
 features, promotions, and pricing models, it can be difficult to know which one to trust. 
 However, if you’re looking for a reliable, transparent, and performance-oriented solution, 
 [Cloudflare’s domain registrar service](https://domains.cloudflare.com/) stands out as a top choice 
-and is what I'll assume you use for the rest of this guide as well.
+and is what I'll assume you use for the rest of this guide as well%$It's what I use too!$%.
 
 
 
@@ -26,7 +26,7 @@ This ensures you’re always getting a fair deal, and budgeting for your domains
 ### WHOIS privacy
 
 When you register a website, you're required to be contactable, and the traditional way registrars do this is by publishing 
-your information to the WHOIS database where they can be looked up by everyone. 
+your information to the WHOIS database where your information can be looked up by anyone. 
 
 Cloudflare automatically includes [WHOIS privacy protection](https://en.wikipedia.org/wiki/Domain_privacy) (where applicable) at no additional cost, 
 shielding your details from prying eyes and reducing the risk of spam or unwanted contact.
@@ -43,4 +43,4 @@ steps for us.
 
 ---
 
-Now let's [build our website](creating-a-website).
+**Next:** Let's [build our website](creating-a-website).

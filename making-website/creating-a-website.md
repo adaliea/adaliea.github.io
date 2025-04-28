@@ -8,7 +8,9 @@ title: Create a Website
 For this site, we'll use [Jekyll](https://jekyllrb.com/). 
 
 [Jekyll](https://jekyllrb.com/) is a static site generator designed to simplify the creation of fast, secure, and scalable websites. 
-Built on Ruby, it takes your content written in Markdown or HTML, combines it with templates, and generates a static website ready for deployment. 
+Built on Ruby, it takes your content written in Markdown or HTML, combines it with templates,
+and generates a static website ready for deployment. 
+
 It is ideal for blogs, portfolios, and documentation sites. (This site is made with Jekyll!) 
 Its minimalistic approach makes it a popular choice for developers who value control, performance, and simplicity.
 
@@ -59,4 +61,4 @@ follow the [_Upload a project to Github_](https://docs.github.com/en/get-started
 
 --- 
 
-With that done, it's time to [publish our site](deploying-your-website).
+**With that done**, it's time to [publish our site](deploying-your-website).
