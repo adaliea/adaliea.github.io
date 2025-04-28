@@ -11,8 +11,14 @@ fetch(
             let imageLink = bookData.coverLink;
             let imageSources = "";
             for (let size of sizes) {
-                if (imageLink.includes("books.google.com")) {
-                    imageSources += imageLink + "&fife=w" + size + " " + size + "w, "
+                try {
+                    const parsedUrl = new URL(imageLink);
+                    const allowedHosts = ["books.google.com"];
+                    if (allowedHosts.includes(parsedUrl.host)) {
+                        imageSources += imageLink + "&fife=w" + size + " " + size + "w, ";
+                    }
+                } catch (e) {
+                    console.error("Invalid URL:", imageLink);
                 }
             }
 
