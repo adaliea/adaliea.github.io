@@ -118,9 +118,18 @@ title: Update Reading Progress
 
     function updateProgress(workId, pages) {
         var pages = document.getElementById(workId + "pages").value;
-        totalPages = document.getElementById(workId + "totalPages").value;
+        var totalPages = document.getElementById(workId + "totalPages").value;
+
+        // Validate and sanitize totalPages
+        if (isNaN(totalPages) || totalPages <= 0) {
+            console.error("Invalid totalPages value:", totalPages);
+            alert("Invalid total pages value. Please enter a valid number.");
+            return;
+        }
+
+        totalPages = encodeURIComponent(totalPages);
         var percent = pages / totalPages;
 
-        window.location.href = "https://books.api.dacubeking.com/updateProgress?workId=" + workId + "&percent=" + percent + "&totalPages=" + totalPages;
+        window.location.href = "https://books.api.dacubeking.com/updateProgress?workId=" + encodeURIComponent(workId) + "&percent=" + encodeURIComponent(percent) + "&totalPages=" + totalPages;
     }
 </script>
