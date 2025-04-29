@@ -13,7 +13,7 @@ fetch(
             const parsedUrl = new URL(imageLink);
             if (parsedUrl.host.includes("books.google.com")) {
                 for (let size of sizes) {
-                    parsedUrl.searchParams.set("fife", size.toString())
+                    parsedUrl.searchParams.set("fife", "w" + size.toString())
                     imageSources +=  parsedUrl.toString() + " " + size + "w, ";
                 }
             }

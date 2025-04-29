@@ -32,8 +32,8 @@ title: Reading Log (Edit Mode)
         json.forEach(function(bookData) {
             let authorHtml = bookData.authors.map((author, index) => `${author}`);
             const parsedUrl = new URL(bookData.coverLink);
-            if (parsedUrl.host === "books.google.com") {
-              parsedUrl.searchParams.set("fife", "w800");
+            if (parsedUrl.host.includes("books.google.com")) {
+              parsedUrl.searchParams.set("fife", "w1000");
             }
 
             fetchImage(parsedUrl.toString());
