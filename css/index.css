@@ -46,7 +46,6 @@ span.dacubeking {
     -webkit-background-clip: text; /* For Chrome/Safari */
     background-clip: text;
     color: transparent;
-    padding-bottom: 2rem;
     backdrop-filter: opacity(70%);
 
     /* Use a continuous scrolling animation */
