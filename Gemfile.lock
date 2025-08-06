@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/varun7654/jekyll-minifier.git
+  remote: https://github.com/adaliea/jekyll-minifier.git
   revision: 5e47ef8c10701bd5b6779927d38dfc4c13201492
   branch: terser
   specs:

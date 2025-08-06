@@ -26,7 +26,7 @@ I started this project with the following goals:
 3. They should work automatically. I don't want to have to run extra commands to generate everything. 
 4. Arrows should look hand-drawn (ish). I don't want every arrow to look the same. %$Getting notes to place properly in lists took a bunch of effort$%
 
-Source [here](https://github.com/varun7654/varun7654.github.io/blob/main/_ts/src/notes.ts)
+Source [here](https://github.com/adaliea/adaliea.github.io/blob/main/_ts/src/notes.ts)
 
 # Starting in JS Land
 

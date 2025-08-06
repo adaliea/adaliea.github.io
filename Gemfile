@@ -18,6 +18,6 @@ group :jekyll_plugins do
   gem "jekyll-theme-minimal"
   gem "minima"
   gem "jekyll-sitemap"
-  gem 'jekyll-minifier', github: 'varun7654/jekyll-minifier', branch: 'terser'
+  gem 'jekyll-minifier', github: 'adaliea/jekyll-minifier', branch: 'terser'
   gem 'jekyll-sass-converter'
 end
