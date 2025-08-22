@@ -1,3 +1,11 @@
+---
+---
+
+@import
+"minima/skins/{{ site.minima.skin | default: 'classic' }}",
+"minima/initialize";
+
+
 hr {
   margin-top: 30px;
   margin-bottom: 20px;
@@ -138,4 +146,6 @@ blockquote p {
   max-width: 50em;
 }
 
-
+.post-header {
+  text-align: left;
+}

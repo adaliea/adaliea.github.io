@@ -6,7 +6,7 @@ title: Blank Filler App
 <head>
     <link rel="preload" href="/ts_out/blankfiller.js" as="script" />
     <script type="text/javascript" src="/ts_out/blankfiller.js"></script>
-    <link rel="stylesheet" href="/css/blankfiller.css">
+    <link rel="stylesheet" href="/assets/css/blankfiller.css">
 </head>
 
 

@@ -20,4 +20,5 @@ group :jekyll_plugins do
   gem "jekyll-sitemap"
   gem 'jekyll-minifier', github: 'adaliea/jekyll-minifier', branch: 'terser'
   gem 'jekyll-sass-converter'
+  gem "jekyll-remote-theme"
 end

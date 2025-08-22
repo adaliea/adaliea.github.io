@@ -1,6 +1,9 @@
 title: "DaCubeKing's Blog"
-author: "Adalie"
-description: "College Student from California that loves tech and programming."
+author:
+  name: "Adalie"
+  email: hi@adalie.com
+description: >
+  College Student from California that loves tech and programming.
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
@@ -15,11 +18,44 @@ instagram_username: DaCubeKing
 youtube_username: DaCubeKing
 #googleplus_username: +username
 
+
+
+remote_theme: "jekyll/minima@1fe0fbfb5347fb4e047696d3b7479c04ed0051bc"
+
+
 show_excerpts: true
 
 theme: "minima"
 
 #rss: rss
+
+minima:
+  nav_pages:
+    - reading.html
+    - resume.html
+    - blankfiller.md
+  social_links:
+    - title: Github
+      icon: github
+      url: "https://github.com/adaliea"
+    - title: Bluesky
+      icon: bluesky
+      url: "https://bsky.app/profile/adalie.me"
+    - title: Twitter
+      icon: twitter
+      url: "https://twitter.com/dacubeking"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://www.linkedin.com/in/adaliea/"
+    - title: Instagram
+      icon: instagram
+      url: "https://www.instagram.com/dacubeking/"
+    - title: Youtube
+      icon: youtube
+      url: "https://youtube.com/DaCubeKing"
+  hide_site_feed_link: true
+  skin: auto
+
 
 kramdown:
   syntax_highlighter_opts:
@@ -45,9 +81,6 @@ header_pages:
   - reading.html
   - archive.md
 
-jekyll-minifier:
-  exclude:
-    - "css/index.css"
 exclude:
   - packages.json
   - tsconfig.json
