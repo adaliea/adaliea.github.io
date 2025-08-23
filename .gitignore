@@ -5,3 +5,4 @@ oauth.json
 /node_modules/
 .idea/workspace.xml
 .tsbuildinfo
+.jekyll-metadata
