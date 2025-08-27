@@ -92,4 +92,8 @@ sass:
   style: compressed
   sass_dir: _sass
 
+
+jekyll-minifier:
+  exclude:
+    - "assets/css/*"
 url: "https://dacubeking.com"
