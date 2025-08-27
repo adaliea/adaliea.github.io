@@ -32,8 +32,9 @@ theme: "minima"
 minima:
   nav_pages:
     - reading.html
-    - resume.html
+    - archive.html
     - blankfiller.md
+
   social_links:
     - title: Github
       icon: github
@@ -76,10 +77,6 @@ defaults:
       type: post
     values:
       tags: Other
-
-header_pages:
-  - reading.html
-  - archive.md
 
 exclude:
   - packages.json
