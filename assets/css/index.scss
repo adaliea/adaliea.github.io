@@ -12,12 +12,13 @@
 }
 
 .intro-bg {
-    min-height: calc(100vh - 22em);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     overflow: hidden;
+    min-height: calc(100vh - 16em);
+
 }
 
 span.dacubeking {
@@ -32,6 +33,7 @@ span.dacubeking {
 }
 
 .intro-title {
+    font-size: 4em;
     font-family: 'Dancing Script', serif;
     font-weight: 1000;
     /* Here, we design a gradient that repeats seamlessly by repeating the first color at the end */
@@ -83,9 +85,7 @@ span.dacubeking {
         min-height: calc(100vh - 22em);
     }
     .inner-intro {
-        padding-left: 5em;
-        padding-bottom: calc(14vh + 2em);
-        padding-top: 5em;
+        padding: 5em 5em calc(14vh + 2em);
     }
     .intro-title {
         font-size: 5em;
@@ -93,25 +93,8 @@ span.dacubeking {
     .intro-border {
         height: 14vh;
     }
-
 }
 
-@media screen and (max-width: 800px) {
-    .intro-bg {
-        min-height: calc(100vh - 16em);
-    }
-    .inner-intro {
-        align-content: center;
-        padding: 2em 1em calc(9vh + 2em);
-        justify-self: center;
-    }
-    .intro-title {
-        font-size: 4em;
-    }
-    .intro-border {
-        height: 9vh;
-    }
-}
 
 .inner-intro {
     min-height: inherit;
@@ -130,6 +113,10 @@ span.dacubeking {
             text-decoration: underline;
         }
     }
+
+    align-content: center;
+    padding: 2em 1em calc(9vh + 2em);
+    justify-self: center;
 }
 
 .intro {
@@ -171,6 +158,7 @@ span.dacubeking {
     bottom: -1px;
     z-index: 3;
     min-width: 800px;
+    height: 9vh;
 }
 
 .post-title {
