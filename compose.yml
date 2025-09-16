@@ -1,0 +1,18 @@
+services:
+  jekyll:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+    develop:
+      watch:
+        - action: rebuild
+          path: package.json
+        - action: rebuild
+          path: Gemfile
+        - action: rebuild
+          path: _config.yml
+        - action: sync
+          path: .
+          target: /
