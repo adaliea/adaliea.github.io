@@ -78,24 +78,6 @@ span.dacubeking {
     }
 }
 
-
-
-@media screen and (min-width: 800px) {
-    .intro-bg {
-        min-height: calc(100vh - 22em);
-    }
-    .inner-intro {
-        padding: 5em 5em calc(14vh + 2em);
-    }
-    .intro-title {
-        font-size: 5em;
-    }
-    .intro-border {
-        height: 14vh;
-    }
-}
-
-
 .inner-intro {
     min-height: inherit;
     vertical-align: middle;
@@ -119,6 +101,23 @@ span.dacubeking {
     justify-self: center;
 }
 
+@media screen and (min-width: 55em) {
+    .intro-bg {
+        min-height: calc(100vh - 22em);
+    }
+    .inner-intro {
+        padding: 5em 5em calc(14vh + 2em);
+        justify-self: left;
+    }
+    .intro-title {
+        font-size: 5em;
+    }
+    .intro-border {
+        height: 14vh;
+    }
+}
+
+
 .intro {
     min-height: inherit;
     position: relative;
@@ -138,10 +137,10 @@ span.dacubeking {
     inset: 0;
     z-index: -1;
     backdrop-filter: brightness(60%) blur(5px);
-    --fade-off-start: 48em;
+    --fade-off-start: 50em;
     mask: linear-gradient(
             to right,
-            #000000FF calc(var(--fade-off-start) + 0em),
+            pink calc(var(--fade-off-start) + 0em),
             #000000F7 calc(var(--fade-off-start) + 2em),
             #000000E6 calc(var(--fade-off-start) + 4em),
             #000000A6 calc(var(--fade-off-start) + 8em),
