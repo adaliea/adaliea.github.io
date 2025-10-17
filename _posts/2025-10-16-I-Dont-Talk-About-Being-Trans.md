@@ -25,7 +25,7 @@ I remember carpooling with my mom on the way to work with her lecturing me to "t
 and to think about how I can "build my resume" to get a "good job" once I graduate.
 Her looking so far ahead in my life that she failed to see I was struggling so hard to make it to the next day.
 
-Towards the end of November, I ended up telling the world I was trans in an Instagram post.
+Towards the end of November, I ended up telling the world I was trans in an Instagram story.
 I still wasn't presenting as a girl most of the time, but I was tired of keeping my identity to myself.
 IRL, however, I still didn't say anything about my gender identity and no one really asked.
 I didn't have the confidence to tell people that I'd like them to use different pronouns and a different name.
@@ -53,7 +53,7 @@ During this period, I also began to be consistently read as a woman by strangers
 Seeing the double-take TSA did when looking at my ID was so funny and euphoric.
 
 My summer internship was also amazing.
-I was just a full-time girl nerding out about Rust and figuring out what the heck Kubernetes is.
+I was just a full-time girl, nerding out about Rust and figuring out what the heck Kubernetes is.
 My confidence grew working and socializing with my coworkers who only ever knew me as a woman, Adalie.
 I regularly wore skirts and feminine tops and was accepted%$I know that this is sadly not a universal experience$% as
 who I am without a second thought.
