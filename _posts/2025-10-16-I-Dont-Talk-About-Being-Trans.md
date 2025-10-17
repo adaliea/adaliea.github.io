@@ -1,5 +1,6 @@
 ---
 title: I don't talk about being trans
+excerpt: I've grown comfortable with my identity, so why don't I talk about who I am more? 
 ---
 
 I turned twenty-one last month.
