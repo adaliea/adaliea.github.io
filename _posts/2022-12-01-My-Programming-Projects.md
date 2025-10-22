@@ -7,8 +7,8 @@ As a 20 year old, I've been programming for over a decade (yes half my life!).
 It started with little projects and games [I made on Scratch](https://scratch.mit.edu/users/vxa1527/), but has slowly evolved into larger and more complex projects,
 some of which are listed below: 
 
-
-- [WeCode](https://github.com/adaliea/ai-coding-tutor): A website utilizing LLMs to help you learn to code
+- Core contributor to [Better Lyrics](https://github.com/boidushya/better-lyrics) for YouTube Music
+  - I developed and host the [current backend](https://github.com/adaliea/better-lyrics-cf-api)
 
 #### **Created a bunch of stuff for my FRC team:**
 - [2023 FRC Robot](https://github.com/FRC3476/FRC-2023)
@@ -27,7 +27,7 @@ some of which are listed below:
 #### **Some Minecraft Mods/Plugins:**
 - Client Side Noteblocks. [Modrinth](https://modrinth.com/mod/clientsidenoteblocks), [Curseforge](https://www.curseforge.com/minecraft/mc-mods/client-side-noteblocks)
     - A Minecraft mod to reduce audio latency when playing noteblocks in Minecraft. Works by processing inputs on the client instead of waiting for the server to play the sound.
-    - 350k+ downloads
+    - Over 500k downloads
 - To Do List. [Spigot](https://www.spigotmc.org/resources/to-do-list.94596/)
     - Simple Plugin for Spigot that holds a To Do List on your Minecraft server.
 - Quick Report [Hypixel](https://hypixel.net/threads/forge-1-8-9-quickreport-a-mod-for-quickly-reporting-cheaters-on-hypixel.3428305/)
@@ -40,5 +40,4 @@ some of which are listed below:
 
 #### **Also contributed to...**
 - [Modflared](https://github.com/HttpRafa/modflared): A Minecraft Mod that handles opening cloudflare tunnels to connect to servers behind them
-- [Better Lyrics](https://github.com/boidushya/better-lyrics) for YouTube Music
-  - Also experimenting using using OpenAI's Whisper to generate per-word synced lyrics
+- [WeCode](https://github.com/adaliea/ai-coding-tutor): A website utilizing LLMs to help you learn to code
