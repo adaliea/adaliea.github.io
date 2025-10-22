@@ -17,5 +17,6 @@ RUN npm ci
 COPY . .
 
 EXPOSE 4000
+EXPOSE 8080
 
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload", "--incremental"]
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload-port", "8080", "--livereload", "--incremental"]
