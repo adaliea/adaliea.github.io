@@ -1,1 +1,6 @@
-Sitemap: https://dacubeking.com/robots.txt
+User-Agent: *
+Content-signal: search=yes,ai-input=yes,ai-train=no
+Allow: /
+
+
+Sitemap: https://dacubeking.com/sitemap.xml
