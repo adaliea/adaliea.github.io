@@ -7,20 +7,36 @@ As a 20 year old, I've been programming for over a decade (yes half my life!).
 It started with little projects and games [I made on Scratch](https://scratch.mit.edu/users/vxa1527/), but has slowly evolved into larger and more complex projects,
 some of which are listed below: 
 
-- Core contributor to [Better Lyrics](https://github.com/boidushya/better-lyrics) for YouTube Music
-  - I developed and host the [current backend](https://github.com/adaliea/better-lyrics-cf-api)
+# Current Projects
+
+- Maintainer of [Better Lyrics](https://github.com/boidushya/better-lyrics) for YouTube Music
+  - I developed and host the [current primary backend](https://github.com/adaliea/better-lyrics-cf-api) using Cloudflare Workers, D1, & R2.
+  - Implemented Word and Syllable Synced Lyrics
+
+  ![Screenshot of Better Lyrics](assets/projects/better-lyrics.png)
+
+- Programming Lead for my school's Robot in 3 Days team'
+
+  <iframe width="100%" style="aspect-ratio: 16 / 9;" src="https://www.youtube-nocookie.com/embed/tpeo8EcOMhU?si=MkDE3bSxO3qqkeKY&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 #### **Created a bunch of stuff for my FRC team:**
 - [2023 FRC Robot](https://github.com/FRC3476/FRC-2023)
     - [TBA (Event Statistics/Results)](https://www.thebluealliance.com/team/3476/2023)
-    - [Robot Reveal (Youtube)](https://www.youtube.com/watch?v=CvMuQAEPYbs)
+  
+  <iframe width="100%" style="aspect-ratio: 16 / 9;" src="https://www.youtube-nocookie.com/embed/CvMuQAEPYbs?si=PxRh6R8aHPBqRO0u&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - [AutoBuilder](https://github.com/adaliea/AutoBuilder)
     - A IDE that I created for developing and testing autonomous routines for FRC
+
+  ![An screenshot of the AutoBuilder UI](assets/projects/autobuilder.png)
+  
 - [2022 FRC Robot](https://github.com/FRC3476/FRC-2022)
     - [TBA (Event Statistics/Results)](https://www.thebluealliance.com/team/3476/2022)
-    - [Robot Reveal](https://youtu.be/sENzTtd2u-4?si=sy6iKiOx9PQ8F8MX)
     - [Pre Camps Highlight](https://youtu.be/nkH3cWh3aaQ?si=7G2HqcnQYptRMW_P)
-    - [Post Season Recap](https://youtu.be/yWqOs5D42iM?si=f03J6xR_TmcbQS1o)
+      - [Post Season Recap](https://youtu.be/yWqOs5D42iM?si=f03J6xR_TmcbQS1o)
+      
+  <iframe width="100%" style="aspect-ratio: 16 / 9;" src="https://www.youtube-nocookie.com/embed/sENzTtd2u-4?si=DhvCDHdm_FQLjxnP&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - [2020/2021 FRC Robot](https://github.com/FRC3476/FRC-2020)
     - [TBA (Event Statistics/Results)](https://www.thebluealliance.com/team/3476/2021)
 

@@ -27,9 +27,10 @@ layout: base
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
         {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
+        <span class="bullet-divider">•</span>
       </div>
       {%- endif %}
-      <span> • {% include read-time.html content = page.content %} </span>
+      <span> {% include read-time.html content = page.content %} </span>
     </div>
   </header>
 

@@ -16,6 +16,12 @@
 
 <body>
 <div class="intro-bg" id="intro-bg" style="margin-bottom: 3em; background-image: url('/assets/home/IMG_8116.jpg')">
+    <header class="home-header">
+        <nav>
+            <a href="/projects" class="header-link">Projects</a>
+            <a href="/reading" class="header-link">Reading Log</a>
+        </nav>
+    </header>
     <div class="intro">
         <div class="inner-intro">
             <div>
@@ -30,20 +36,19 @@
             </div>
             <p></p>
             <p>
-                I’m a 20-year-old college student from Los Angeles,
-                learning <strong>Computer Science</strong> and <strong>Math</strong>.
-                When I’m not obsessively writing code or doing homework,
-                you might catch me watching k-dramas, reading romance novels,
-                playing video games,
-                or exploring the artistic world through photography.
+                I’m a 21-year-old college student from Los Angeles,
+                studying <strong>Computer Science</strong> and <strong>Math</strong> at
+                <a href="https://www.psu.edu/">The Pennsylvania State University</a>.
+                When I’m not writing code or doing homework, you'll probably find me
+                watching k-dramas, reading romance novels, or playing video games.
             </p>
             <p>
-                In high school,
-                I was the programming lead for my First Robotics team.
-                I built award-winning robots,
+                In high school I was the programming lead for my First Robotics Competition team
+                where I built award-winning robots,
                 including one that secured us a division win at Worlds.
-                I also ventured into the YouTube realm,
-                crafting Minecraft videos that gave my creative side the spotlight.
+                I continue to do work on robots though my school's
+                <a href="https://www.youtube.com/@PennStateRi3D/featured"> Robot In 3 Days team</a>, where, in three days
+                we build a 120-pound competition ready robot.
             </p>
             <p>
                 Now? Life’s a mix of hobbies, projects, and curiosity.
@@ -52,7 +57,7 @@
                 <li>🌟
                     <strong>Tinkering</strong> with code led me to create
                     <a href="https://github.com/adaliea/adaliea.github.io">this site</a> and a bunch of other
-                    <a href="/2022/12/01/My-Programming-Projects.html">projects</a>.
+                    <a href="/projects">projects</a>.
                 </li>
                 <li> 📸
                     <strong>Photography</strong> to scratch my creative itch.
@@ -153,7 +158,6 @@
         'https://books.api.dacubeking.com/homepageinfo',
         {priority: 'high'}
       ).then(function (response) {
-        // When the page is loaded, convert it to text
         /**
          * @type Promise<homepageInfo>
          */
@@ -181,8 +185,6 @@
             My current favorite is <a href=${track.url}>${track.name}</a> by <a href=${track.artist.url}>${track.artist.name}</a>.
           `
         }
-
-
       })
    </script>
 </div>
