@@ -104,13 +104,15 @@ span.dacubeking {
 .home-header {
     position: absolute;
     top: 1em;
-    width: 100%;
     z-index: 10;
     margin-bottom: 1em;
 
+    right: 3em;
+    width: auto;
+
     nav {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         flex-wrap: wrap;
         column-gap: 0.5em;
     }
@@ -124,7 +126,7 @@ span.dacubeking {
 
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.7rem;
+    font-size: 1.1rem;
 
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -151,6 +153,13 @@ span.dacubeking {
 
 }
 
+@media screen and (max-width: 44em) {
+    .home-header {
+        visibility: hidden;
+    }
+}
+
+
 @media screen and (min-width: 55em) {
     .intro-bg {
         min-height: calc(100vh - 22em);
@@ -164,16 +173,6 @@ span.dacubeking {
     }
     .intro-border {
         height: 14vh;
-    }
-    .home-header {
-        right: 3em;
-        width: auto;
-        nav {
-            justify-content: flex-end;
-        }
-    }
-    .header-link {
-        font-size: 1.2em;
     }
 }
 
