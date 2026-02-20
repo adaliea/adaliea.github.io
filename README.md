@@ -21,10 +21,6 @@ docker compose up --build
 
 Note: When running the site locally you may notice that some preloads will fail. This is expected and the resulting errors can be ignored. I'm using Cloudflare Fonts which automatically replaces Google Fonts with proxied version from Cloudfare on the production website. 
 
-## Previewing the site locally (with Docker)
-```bash
-docker commpose up
-```
 ## Tech stack
 
 - Using Jekyll, with the minima theme.
