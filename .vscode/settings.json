@@ -1,9 +1,5 @@
 {
-    "grammarly.selectors": [
-        {
-            "language": "markdown",
-            "scheme": "file"
-        }
-    ],
-    "cSpell.words": ["Curseforge", "dynmap", "Hypixel", "Modrinth", "Noteblocks", "tickrates"]
+	"files.associations": {
+		"wrangler.json": "jsonc"
+	}
 }

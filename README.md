@@ -1,32 +1,47 @@
-# My Personal Website
+# OpenNext Starter
 
-See the live version:
-[dacubeking.com](https://dacubeking.com)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Previewing the site locally
+## Getting Started
 
-### With Docker (Recommended)
+Read the documentation at https://opennext.js.org/cloudflare.
+
+## Develop
+
+Run the Next.js development server:
 
 ```bash
-docker compose up --build
+npm run dev
+# or similar package manager command
 ```
 
-### Without Docker
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. You will need ruby installed on your machine.
-2. You may also need to install bundler which can be done with `gem install bundler`.
-3. The rest of the ruby dependencies can be installed with `bundle install`.
-4. With node.js installed, run `npm install` to install the node dependencies.
-5. Preview the site with `bundle exec jekyll serve`.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Note: When running the site locally you may notice that some preloads will fail. This is expected and the resulting errors can be ignored. I'm using Cloudflare Fonts which automatically replaces Google Fonts with proxied version from Cloudfare on the production website. 
+## Preview
 
-## Previewing the site locally (with Docker)
+Preview the application locally on the Cloudflare runtime:
+
 ```bash
-docker commpose up
+npm run preview
+# or similar package manager command
 ```
-## Tech stack
 
-- Using Jekyll, with the minima theme.
-- Typescript so that some of the JS on the site can be written with types
+## Deploy
 
+Deploy the application to Cloudflare:
+
+```bash
+npm run deploy
+# or similar package manager command
+```
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
