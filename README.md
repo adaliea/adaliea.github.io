@@ -26,14 +26,23 @@ npm run preview     # Build and run locally in the Workers runtime
 npm run deploy      # Build and deploy using your Cloudflare login
 ```
 
-For an existing Cloudflare Worker, set `name` in `wrangler.jsonc` to that Worker’s name. For a new Worker, the configured name is `adalie-website`. Attach `dacubeking.com` under the Worker’s **Settings → Domains & Routes** after deployment. The old `CNAME` file does not configure Workers domains.
+The production Worker is `adalie-website`. `wrangler.jsonc` records the account and routes for `dacubeking.com/*` and `adalie.me/*`, so deployments retain the routing configuration. These routes serve the entire site through the Worker while preserving the existing proxied DNS records. Other subdomains, including the books API, keep their existing routing. The old `CNAME` file does not configure Workers routes. The direct Worker URL is https://adalie-website.dacubeking.workers.dev.
 
 For Cloudflare Workers Builds connected to this repository:
 
+- Repository: `adaliea/adaliea.github.io`
+- Production branch: `main`
 - Build command: `npm run build:worker`
 - Deploy command: `npx opennextjs-cloudflare deploy`
+- Non-production branch deploy command: `npx opennextjs-cloudflare upload`
 - Root directory: the repository root
 - Node.js version: 24
+
+Node.js 24 supplies npm 11. The obsolete Ruby version and Gemfile manifests are removed so Cloudflare's dependency detection only installs the Node toolchain.
+
+Production pushes deploy the Worker; other branches upload preview versions without changing production. Use the OpenNext deploy/upload commands so prerendered blog assets are populated along with the Worker bundle.
+
+The legacy Pages project, `adaliea-github-io`, used the Jekyll build command. Its production and preview Git deployments should stay disabled after migrating to Workers Builds; changing the Pages build command alone cannot deploy this Workers application. Keep its existing domain associations and DNS records as the fallback origin. To return to the last Pages deployment, remove the two Worker routes in Cloudflare and from `wrangler.jsonc` before the next deployment.
 
 No R2 bucket, D1 database, or Cloudflare Images subscription is required. Local fonts and original image assets are included in the deployment. `public/_headers` gives hashed Next.js assets immutable caching.
 

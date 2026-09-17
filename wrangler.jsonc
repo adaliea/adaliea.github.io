@@ -1,7 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "adalie-website",
+  "account_id": "f5dbfc5cf299cd799bf49f258675f82b",
   "main": ".open-next/worker.js",
+  "workers_dev": true,
+  "preview_urls": true,
+  "routes": [
+    { "pattern": "dacubeking.com/*", "zone_name": "dacubeking.com" },
+    { "pattern": "adalie.me/*", "zone_name": "adalie.me" }
+  ],
   "compatibility_date": "2026-09-09",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
