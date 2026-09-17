@@ -38,6 +38,8 @@ For Cloudflare Workers Builds connected to this repository:
 - Root directory: the repository root
 - Node.js version: 24
 
+Node.js 24 supplies npm 11. The obsolete Ruby version and Gemfile manifests are removed so Cloudflare's dependency detection only installs the Node toolchain.
+
 Production pushes deploy the Worker; other branches upload preview versions without changing production. Use the OpenNext deploy/upload commands so prerendered blog assets are populated along with the Worker bundle.
 
 The legacy Pages project, `adaliea-github-io`, used the Jekyll build command. Its production and preview Git deployments should stay disabled after migrating to Workers Builds; changing the Pages build command alone cannot deploy this Workers application. Keep its existing domain associations and DNS records as the fallback origin. To return to the last Pages deployment, remove the two Worker routes in Cloudflare and from `wrangler.jsonc` before the next deployment.
