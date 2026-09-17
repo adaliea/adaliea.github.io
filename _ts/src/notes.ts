@@ -9,7 +9,7 @@ const STROKE_STYLE = "#706b67";
 
 let showBoundingBoxes = false;
 
-function toggleShowBoundingBoxes() {
+export function toggleShowBoundingBoxes() {
     showBoundingBoxes = !showBoundingBoxes;
     updateNoteElements();
 }
@@ -217,10 +217,10 @@ function updateNoteElements() {
             textElementParent.style.position = "relative"
 
             let textElemParentBoundingBox = toGlobalBounds(textElementParent.getBoundingClientRect());
-            let parentParentBoundRect = toGlobalBounds(parent.parentElement!.getBoundingClientRect());
-
-            let maxBoundX = window.innerWidth - textElemParentBoundingBox.width - Math.sin(randomRotation) * noteHeight - 20;
-            let minBoundX = 0;
+            // Clamp the rotated box to the viewport, including nested list notes.
+            // Negative padding was ignored by browsers and pushed these off small screens.
+            let minBoundX = 16;
+            let maxBoundX = Math.max(minBoundX, window.innerWidth - textElemParentBoundingBox.width - 16);
 
             let randomScale = textElemParentBoundingBox.width * 0.8
             let randomXOffset = random(index, 5) * randomScale;
@@ -228,7 +228,7 @@ function updateNoteElements() {
                 - (randomScale / 2) + randomXOffset; //randomness
             xPos = Math.max(minBoundX, Math.min(maxBoundX, xPos));
 
-            textElementParent.style.paddingLeft = (xPos - parentParentBoundRect.x) + "px";
+            textElementParent.style.left = (xPos - textElemParentBoundingBox.x) + "px";
 
             textElementParent.style.textAlign = "left";
             ctx = getCanvasCtx(0, parentBoundRect.y - extraCanvasHeight / 2, parentBoundRect.height + textElemParentBoundingBox.width + extraCanvasHeight);
@@ -324,60 +324,44 @@ function updateNoteElements() {
     })
 }
 
-document.addEventListener("DOMContentLoaded", function (event) {
-
-    let canvas = getCanvas(1, 1, 1, 1);
-    if (!canvas) return; // Canvas not supported. Give up in this case
-    document.body.removeChild(canvas);
-    canvasElementIds = [];
-
-    // Main wrapper for the parts of the website we care about
-    const pageContent = document.getElementsByClassName("page-content")[0];
-
-
-
-    // Callback function to execute when mutations are observed
-    const callback = (mutationList: MutationRecord[], observer: MutationObserver) => {
-        if (!fontsLoaded || !noteFontLoaded) return;
-        for (const mutation of mutationList) {
-            if (mutation.type === "childList") {
-                // @ts-ignore
-                let hasNonTextNode = Array.from(mutation.addedNodes).some(node => node.className !== noteTextClassName && node.className !== noteTextWideClassName);
-                if (hasNonTextNode) {
-                    updateNoteElements();
-                }
-            }
-        }
+export function initializeNotes() {
+    let disposed = false;
+    let frame = 0;
+    noteElementIds = Array.from(document.querySelectorAll<HTMLElement>(".note")).map(note => note.id);
+    if (noteElementIds.length === 0) return () => {};
+    showBoundingBoxes = false;
+    document.body.classList.add("notes-ready");
+    const update = () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+            if (!disposed && fontsLoaded && noteFontLoaded) updateNoteElements();
+        });
     };
-
-    const observer = new MutationObserver(callback);
-
-    window.addEventListener('resize', updateNoteElements);
-
-    // Wait for fonts to load before rendering. We'll get misaligned notes if we don't
-    document.fonts.load("2em Indie Flower").then(() => {
-        noteFontLoaded = true;
-        if (fontsLoaded) {
-            updateNoteElements();
-        }
-    });
-    document.fonts.ready.then(() => {
+    window.addEventListener("resize", update);
+    document.addEventListener("load", update, true);
+    Promise.all([document.fonts.load('2em "Indie Flower"'), document.fonts.ready]).then(() => {
+        if (disposed) return;
         fontsLoaded = true;
-        if (noteFontLoaded) {
-            updateNoteElements();
-        }
+        noteFontLoaded = true;
+        update();
     });
-
-    const config = {attributes: true, childList: true, subtree: true};
-    observer.observe(pageContent, config);
-
-
-    let notes = document.getElementsByClassName("note");
-    for (let i = 0; i < notes.length; i++) {
-        const note = notes[i];
-        noteElementIds.push(note.id);
-    }
-});
+    return () => {
+        disposed = true;
+        cancelAnimationFrame(frame);
+        window.removeEventListener("resize", update);
+        document.removeEventListener("load", update, true);
+        for (const id of [...canvasElementIds, ...noteTextElementIds]) document.getElementById(id)?.remove();
+        for (const id of modifiedMarginsElementIds) {
+            const element = document.getElementById(id);
+            if (element) element.style.marginBottom = element.dataset.originalMarginBottom || "";
+        }
+        canvasElementIds = [];
+        noteTextElementIds = [];
+        modifiedMarginsElementIds = [];
+        noteElementIds = [];
+        document.body.classList.remove("notes-ready");
+    };
+}
 
 
 let canvasWidthShrink = 0;
@@ -396,7 +380,9 @@ function getCanvas(x: number, y: number, width: number, height: number) {
     canvas.style.top = y + "px";
     canvas.style.left = x + "px";
     canvas.style.right = "0px"
-    canvas.style.zIndex = "-1"
+    canvas.style.zIndex = "0";
+    canvas.style.pointerEvents = "none";
+    canvas.setAttribute("aria-hidden", "true");
     document.body.appendChild(canvas);
 
 
@@ -573,4 +559,3 @@ class Point {
         return new Point(this.x + cos * x - sin * y, this.y + sin * x + cos * y);
     }
 }
-
