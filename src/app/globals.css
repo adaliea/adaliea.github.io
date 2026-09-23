@@ -472,6 +472,12 @@ textarea.field {
   font-weight: 600;
 }
 @media (min-width: 1024px) {
+  .home-header {
+    top: 1rem;
+  }
+  .home-header nav {
+    max-width: none;
+  }
   .menu-toggle {
     display: none;
   }
