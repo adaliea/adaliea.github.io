@@ -5,5 +5,8 @@ import staticAssetsIncrementalCache from "@opennextjs/cloudflare/overrides/incre
 // No ISR, R2 bucket, or database is needed.
 export default defineCloudflareConfig({
   incrementalCache: staticAssetsIncrementalCache,
-  enableCacheInterception: true,
+  // The interceptor returns full-page RSC for Next 16 segment prefetches,
+  // making the client retry indefinitely. Let Next serve the cached segments.
+  // https://github.com/opennextjs/opennextjs-aws/issues/1212
+  enableCacheInterception: false,
 });
