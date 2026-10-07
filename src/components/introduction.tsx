@@ -16,7 +16,7 @@ export function Introduction({ info }: { info: HomepageInfo | null }) {
       </div>
 
       <p>
-        I’m a 21-year-old college student from Los Angeles, studying{" "}
+        I’m a 22-year-old college student from Los Angeles, studying{" "}
         <strong>Computer Science</strong> and <strong>Math</strong> at{" "}
         <a href="https://www.psu.edu/">The Pennsylvania State University</a>. When I’m not writing
         code or doing homework, you’ll probably find me watching k-dramas, reading romance novels,
