@@ -17,7 +17,7 @@ export function SiteFooter() {
             ["Bluesky", "https://bsky.app/profile/adalie.me"],
             ["Twitter", "https://twitter.com/dacubeking"],
             ["LinkedIn", "https://www.linkedin.com/in/adaliea/"],
-            ["Instagram", "https://www.instagram.com/dacubeking/"],
+            ["Instagram", "https://www.instagram.com/adalie.me/"],
             ["YouTube", "https://youtube.com/DaCubeKing"],
             ["RSS", "/feed.xml"],
           ].map(([label, href]) => (
