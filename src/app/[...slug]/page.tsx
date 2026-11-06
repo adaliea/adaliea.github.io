@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleNotes, Comments } from "@/components/article-enhancements";
-import { formatDate, posts, siteUrl } from "@/lib/content";
+import { authorName, defaultOgImage, formatDate, posts, siteName, siteUrl } from "@/lib/content";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string[] }> };
@@ -23,13 +23,17 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     title: post.title,
     description: post.description,
     alternates: { canonical: post.url },
+    authors: [{ name: authorName, url: siteUrl }],
     // Keep the exact old og:title: Giscus uses this as its discussion key.
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: `${post.date}T00:00:00Z`,
+      authors: [authorName],
       url: post.url,
+      siteName,
+      images: [defaultOgImage],
     },
   };
 }
@@ -40,9 +44,14 @@ export default async function BlogPost(props: Props) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
+    description: post.description,
     datePublished: post.date,
-    author: { "@type": "Person", name: "Adalie" },
+    dateModified: post.date,
+    author: { "@type": "Person", name: authorName, url: siteUrl },
+    publisher: { "@type": "Person", name: authorName, url: siteUrl },
+    image: `${siteUrl}${defaultOgImage.url}`,
     url: `${siteUrl}${post.url}`,
+    mainEntityOfPage: `${siteUrl}${post.url}`,
   };
   return (
     <article className="content-shell page-shell" key={post.url}>
