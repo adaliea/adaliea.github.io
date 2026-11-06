@@ -6,12 +6,24 @@ import "@fontsource/indie-flower/latin.css";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { authorName, defaultOgImage, siteDescription, siteName, siteUrl } from "@/lib/content";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dacubeking.com"),
-  title: { default: "Adalie’s Blog", template: "%s | Adalie’s Blog" },
-  description: "College Student from California that loves tech and programming.",
+  metadataBase: new URL(siteUrl),
+  title: { default: `${authorName} | ${siteName}`, template: `%s | ${authorName}` },
+  description: siteDescription,
+  applicationName: siteName,
+  authors: [{ name: authorName, url: siteUrl }],
+  creator: authorName,
   alternates: { types: { "application/atom+xml": "/feed.xml" } },
+  openGraph: {
+    type: "website",
+    siteName,
+    locale: "en_US",
+    description: siteDescription,
+    images: [defaultOgImage],
+  },
+  twitter: { card: "summary_large_image", creator: "@dacubeking" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -1,17 +1,78 @@
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: Only escaped JSON-LD is rendered. */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Introduction } from "@/components/introduction";
 import { PostList } from "@/components/post-list";
 import { getHomepageInfo } from "@/lib/books-server";
-import { posts } from "@/lib/content";
+import {
+  authorName,
+  defaultOgImage,
+  posts,
+  siteDescription,
+  siteName,
+  siteUrl,
+  socialProfiles,
+} from "@/lib/content";
 
-export const metadata: Metadata = { alternates: { canonical: "/" } };
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    url: "/",
+    siteName,
+    locale: "en_US",
+    title: authorName,
+    images: [defaultOgImage],
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: `${siteUrl}/`,
+      name: siteName,
+      description: siteDescription,
+      inLanguage: "en-US",
+      author: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}/#profile`,
+      url: `${siteUrl}/`,
+      name: authorName,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      mainEntity: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: authorName,
+      alternateName: ["Adalie", "DaCubeKing", "adaliea"],
+      url: `${siteUrl}/`,
+      image: `${siteUrl}${defaultOgImage.url}`,
+      description: siteDescription,
+      homeLocation: { "@type": "Place", name: "Los Angeles, California" },
+      alumniOf: { "@type": "CollegeOrUniversity", name: "The Pennsylvania State University" },
+      knowsAbout: ["Computer Science", "Mathematics", "Programming", "Robotics", "Photography"],
+      sameAs: Object.values(socialProfiles),
+    },
+  ],
+};
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const info = await getHomepageInfo();
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <section className="intro-bg" aria-label="About Adalie">
         <div className="intro">
           <Introduction info={info} />

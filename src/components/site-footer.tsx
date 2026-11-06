@@ -1,3 +1,5 @@
+import { socialProfiles } from "@/lib/content";
+
 export function SiteFooter() {
   return (
     <footer className="mt-16 border-t border-[var(--border)]">
@@ -12,15 +14,7 @@ export function SiteFooter() {
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-5 gap-y-1 text-sm" aria-label="Social links">
-          {[
-            ["GitHub", "https://github.com/adaliea"],
-            ["Bluesky", "https://bsky.app/profile/adalie.me"],
-            ["Twitter", "https://twitter.com/dacubeking"],
-            ["LinkedIn", "https://www.linkedin.com/in/adaliea/"],
-            ["Instagram", "https://www.instagram.com/adalie.me/"],
-            ["YouTube", "https://youtube.com/DaCubeKing"],
-            ["RSS", "/feed.xml"],
-          ].map(([label, href]) => (
+          {[...Object.entries(socialProfiles), ["RSS", "/feed.xml"]].map(([label, href]) => (
             <a key={label} href={href} className="inline-flex min-h-11 items-center">
               {label}
             </a>

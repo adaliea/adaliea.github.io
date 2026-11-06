@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { formatDate, posts } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Blog Archive", alternates: { canonical: "/archive" } };
+export const metadata: Metadata = {
+  title: "Blog Archive",
+  description:
+    "Every post on Adalie Ahuja’s blog about programming, robotics, photography, and more.",
+  alternates: { canonical: "/archive" },
+};
 export default function ArchivePage() {
   const tags = [...new Set(posts.flatMap((post) => post.tags))];
   return (
