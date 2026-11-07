@@ -32,6 +32,12 @@ const nextConfig: NextConfig = {
         destination: `/${path}`,
         permanent: true,
       })),
+      // GitHub Pages also served posts without the .html suffix, and Google indexed those.
+      {
+        source: "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug([^/.]+)",
+        destination: "/:year/:month/:day/:slug.html",
+        permanent: true,
+      },
     ];
   },
 };

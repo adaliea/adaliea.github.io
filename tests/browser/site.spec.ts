@@ -182,7 +182,12 @@ test("book data and image dimensions are present before JavaScript runs", async 
 
 test("legacy routes, feeds, and missing pages respond correctly", async ({ request }) => {
   const content = JSON.parse(await readFile("src/generated/content.json", "utf8"));
-  for (const post of content.posts) expect((await request.get(post.url)).status()).toBe(200);
+  for (const post of content.posts) {
+    expect((await request.get(post.url)).status()).toBe(200);
+    const legacy = await request.get(post.url.replace(/\.html$/, ""), { maxRedirects: 0 });
+    expect(legacy.status()).toBe(308);
+    expect(legacy.headers().location).toBe(post.url);
+  }
   for (const path of [
     "projects",
     "reading",
