@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { dancingScript } from "@/fonts/dancing-script";
 import type { HomepageInfo } from "@/lib/books";
 import { CurrentlyReading, FavoriteSong } from "./homepage-activity";
 
@@ -6,7 +7,7 @@ export function Introduction({ info }: { info: HomepageInfo | null }) {
   return (
     <div className="inner-intro">
       <div>
-        <h1 className="intro-title">
+        <h1 className={`intro-title ${dancingScript.variable}`}>
           <span className="dacubeking">Hey there!</span>
           <br />
           <span className="dacubeking">

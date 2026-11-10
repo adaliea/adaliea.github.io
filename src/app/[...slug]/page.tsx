@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArticleNotes, Comments } from "@/components/article-enhancements";
+import { indieFlower } from "@/fonts/indie-flower";
 import { authorName, defaultOgImage, formatDate, posts, siteName, siteUrl } from "@/lib/content";
 
 export const dynamicParams = false;
@@ -54,7 +55,7 @@ export default async function BlogPost(props: Props) {
     mainEntityOfPage: `${siteUrl}${post.url}`,
   };
   return (
-    <article className="content-shell page-shell" key={post.url}>
+    <article className={`content-shell page-shell ${indieFlower.variable}`} key={post.url}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

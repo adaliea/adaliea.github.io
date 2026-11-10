@@ -26,8 +26,9 @@
   }
 }
 
+/* The var() fonts are next/font's metric-matched fallbacks (see src/fonts/). */
 @theme inline {
-  --font-sans: "Noto Sans Variable", "Segoe UI", sans-serif;
+  --font-sans: "Noto Sans Variable", var(--font-noto-sans, "Segoe UI"), "Segoe UI", sans-serif;
 }
 
 * {
@@ -213,7 +214,7 @@ button:disabled {
   line-height: 1.75;
 }
 .intro-title {
-  font-family: "Dancing Script Variable", cursive;
+  font-family: "Dancing Script Variable", var(--font-dancing-script, cursive), cursive;
   font-size: clamp(3.6rem, 8vw, 5.5rem);
   line-height: 0.97;
   font-weight: 700;
@@ -395,7 +396,7 @@ button:disabled {
 }
 .note-fallback {
   display: inline;
-  font-family: "Indie Flower", cursive;
+  font-family: "Indie Flower", var(--font-indie-flower, cursive), cursive;
   color: var(--muted);
 }
 .note-fallback::before {
